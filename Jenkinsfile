@@ -6,8 +6,9 @@ pipeline {
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Select the action to perform')
     }
 
-   
-    stages {destroy
+    
+
+    stages {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Anup2799/EC2-pipeline.git'
