@@ -6,13 +6,8 @@ pipeline {
         choice(name: 'action', choices: ['apply', 'destroy'], description: 'Select the action to perform')
     }
 
-    environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
-        AWS_DEFAULT_REGION    = 'us-east-2'
-    }
-
-    stages {
+   
+    stages {destroy
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/Anup2799/EC2-pipeline.git'
